@@ -16,12 +16,16 @@ public class ChordModel {
     private Map<Integer, ChordNode> nodes;
 
 
+    void applyChanges(){
+        nodes.forEach((key, value) -> value.applyChanges());
+    }
 
     public void test(int m, int... ids) {
         nodes = new HashMap<>();
         ChordNode initialNode = new ChordNode(ids[0], m);
         initialNode.join(null);
         nodes.put(initialNode.getId(), initialNode);
+        applyChanges();
         log.info("===== node joined with id[{}] ====", initialNode.getId());
         log.info("all nodes: {}", nodes);
         for (int i = 1; i < ids.length; i++) {
@@ -29,6 +33,7 @@ public class ChordModel {
             initialNode = new ChordNode(ids[i], m);
             initialNode.join(previous);
             nodes.put(initialNode.getId(), initialNode);
+            applyChanges();
             log.info("===== node joined with id[{}] ====", initialNode.getId());
             log.info("all nodes: {}", nodes);
         }

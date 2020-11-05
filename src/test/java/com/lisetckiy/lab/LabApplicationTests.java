@@ -58,22 +58,22 @@ class LabApplicationTests {
     void test2_1() {
         chordModel.test(3, 0, 1, 3, 6);
         Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test2ValidationData();
-        chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key),  value.getLightweightNode()));
+        chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key), value.getLightweightNode()));
     }
 
     @Test
     void test2_2() {
         chordModel.test(3, 1, 0, 3, 6);
         Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test2ValidationData();
-		chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key),  value.getLightweightNode()));
+        chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key), value.getLightweightNode()));
 
-	}
+    }
 
     @Test
     void test2_3() {
         chordModel.test(3, 6, 1, 3, 0);
         Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test2ValidationData();
-		chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key),  value.getLightweightNode()));
+        chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key), value.getLightweightNode()));
     }
 
 
@@ -81,7 +81,58 @@ class LabApplicationTests {
     void test2_4() {
         chordModel.test(3, 6, 3, 1, 0);
         Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test2ValidationData();
-		chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key),  value.getLightweightNode()));
+        chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key), value.getLightweightNode()));
     }
 
+
+    @Test
+    void test2_5() {
+        chordModel.test(3, 3, 0, 6, 1);
+        Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test2ValidationData();
+        chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key), value.getLightweightNode()));
+    }
+
+
+    @Test
+    void test3_1() {
+        chordModel.test(3, 3, 0, 6, 1, 2, 7);
+        Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test3ValidationData();
+        chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key), value.getLightweightNode()));
+    }
+
+    @Test
+    void test3_2() {
+        chordModel.test(3, 3, 0, 6, 1, 7, 2);
+        Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test3ValidationData();
+        chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key), value.getLightweightNode()));
+    }
+
+    @Test
+    void test3_3() {
+        chordModel.test(3, 2, 3, 0, 7, 6, 1);
+        Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test3ValidationData();
+        chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key), value.getLightweightNode()));
+    }
+
+    @Test
+    void test3_4() {
+        chordModel.test(3, 3, 7, 0, 6, 2, 1);
+        Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test3ValidationData();
+        chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key), value.getLightweightNode()));
+    }
+
+
+    @Test
+    void test4_4() {
+        chordModel.test(4, 1, 5, 8, 14);
+        Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test4ValidationData();
+        chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key), value.getLightweightNode()));
+    }
+
+    @Test
+    void test4_5() {
+        chordModel.test(4, 14, 8, 5, 1);
+        Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test4ValidationData();
+        chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key), value.getLightweightNode()));
+    }
 }

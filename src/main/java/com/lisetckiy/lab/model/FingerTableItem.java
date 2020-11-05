@@ -2,6 +2,7 @@ package com.lisetckiy.lab.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.lisetckiy.lab.Utils.pow2;
@@ -15,9 +16,17 @@ public class FingerTableItem {
     @Getter
     private ChordNode node;
 
+    @ToString.Exclude
+    @Getter
+    private ChordNode newNode;
+
     public void setNode(ChordNode node) {
         log.info("set node[{}]", node.getId());
-        this.node = node;
+        this.newNode = node;
+    }
+
+    public void applyChanges(){
+        this.node = this.newNode;
     }
 
     public FingerTableItem(FingerTableItem fingerTableItem)

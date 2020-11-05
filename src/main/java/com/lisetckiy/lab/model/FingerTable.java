@@ -22,6 +22,10 @@ public class FingerTable {
         }
     }
 
+    public void applyChanges(){
+        items.forEach(FingerTableItem::applyChanges);
+    }
+
     public FingerTableItem get(int i) {
         return items.get(i - 1);
     }
