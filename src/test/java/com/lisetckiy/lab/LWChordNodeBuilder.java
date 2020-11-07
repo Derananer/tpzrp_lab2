@@ -21,6 +21,20 @@ public class LWChordNodeBuilder {
         return map;
     }
 
+
+    public Map<Integer,LightweightChordNode> test2_1ValidationData(){
+        Map<Integer, LightweightChordNode> map = new HashMap<>();
+        map.put(0, buildChordNode(0, 1,1, new int[][]{{1,1},{2,0},{4,0}}));
+        map.put(1, buildChordNode(1, 0,0, new int[][]{{2,0},{3,0},{5,0}}));
+        return map;
+    }
+
+    public Map<Integer,LightweightChordNode> test2_2ValidationData(){
+        Map<Integer, LightweightChordNode> map = new HashMap<>();
+        map.put(0, buildChordNode(0, 0,0, new int[][]{{1,0},{2,0},{4,0}}));
+        return map;
+    }
+
     public Map<Integer,LightweightChordNode> test3ValidationData(){
         Map<Integer, LightweightChordNode> map = new HashMap<>();
         map.put(0, buildChordNode(0, 1,7, new int[][]{{1,1},{2,2},{4,6}}));
@@ -38,6 +52,13 @@ public class LWChordNodeBuilder {
         map.put(5, buildChordNode(5, 8,1, new int[][]{{6,8},{7,8},{9,14},{13, 14}}));
         map.put(8, buildChordNode(8, 14,5, new int[][]{{9,14},{10,14},{12,14},{0,1}}));
         map.put(14, buildChordNode(14, 1,8, new int[][]{{15,1},{0,1},{2,5},{6,8}}));
+        return map;
+    }
+
+    public Map<Integer,LightweightChordNode> test4_1ValidationData(){
+        Map<Integer, LightweightChordNode> map = new HashMap<>();
+        map.put(1, buildChordNode(1, 14,14, new int[][]{{2,14},{3,14},{5,14},{9,14}}));
+        map.put(14, buildChordNode(14, 1,1, new int[][]{{15,1},{0,1},{2,14},{6,14}}));
         return map;
     }
 

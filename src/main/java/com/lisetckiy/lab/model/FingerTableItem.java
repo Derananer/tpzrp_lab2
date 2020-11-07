@@ -21,7 +21,7 @@ public class FingerTableItem {
     private ChordNode newNode;
 
     public void setNode(ChordNode node) {
-        log.info("set node[{}]", node.getId());
+//        log.info("set node[{}]", node.getId());
         this.newNode = node;
     }
 
