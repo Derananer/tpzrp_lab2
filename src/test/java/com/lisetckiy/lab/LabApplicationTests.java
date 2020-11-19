@@ -64,6 +64,14 @@ class LabApplicationTests {
     }
 
     @Test
+    void test2_1_tigran() {
+        ChordModel chordModel = new ChordModel(m_3);
+        chordModel.init(0, 1, 3, 6);
+        Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test2ValidationData();
+        chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key), value.getLightweightNode()));
+    }
+
+    @Test
     void test2_2() {
         ChordModel chordModel = new ChordModel(m_3);
         chordModel.init(1, 0, 3, 6);
@@ -76,7 +84,7 @@ class LabApplicationTests {
     void test2_3() {
         ChordModel chordModel = new ChordModel(m_3);
         chordModel.init(6, 1, 3, 0);
-        Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test2ValidationData();
+        Map<Integer, LightweightChordNode> validationMap = lwChordNodeBuilder.test2ValidationData_tigran();
         chordModel.getNodes().forEach((key, value) -> assertEquals("node with id[" + key + "]", validationMap.get(key), value.getLightweightNode()));
     }
 

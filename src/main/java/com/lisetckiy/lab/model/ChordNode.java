@@ -23,16 +23,16 @@ public class ChordNode {
     @ToString.Exclude
     private ChordNode newPredecessor;
 
-    public void applyChanges() {
+    void applyChanges() {
         this.predecessor = this.newPredecessor;
         fingers.applyChanges();
     }
 
-    public void setPredecessor(ChordNode predecessor) {
+    private void setPredecessor(ChordNode predecessor) {
         this.newPredecessor = predecessor;
     }
 
-    public ChordNode(int id, int m) {
+    ChordNode(int id, int m) {
         this.m = m;
         this.fingers = new FingerTable(id, m);
         this.id = id;
@@ -43,7 +43,7 @@ public class ChordNode {
         return this.fingers.get(1).getNode();
     }
 
-    public ChordNode getNewSuccessor() {
+    private ChordNode getNewSuccessor() {
         return this.fingers.get(1).getNewNode();
     }
 
@@ -51,7 +51,7 @@ public class ChordNode {
         return findPredecessor(id).getSuccessor();
     }
 
-    public ChordNode findPredecessor(int id_1) {
+    private ChordNode findPredecessor(int id_1) {
         ChordNode node = this;
         if (this.id == id_1) return this.predecessor;
         while (number(id_1).notIn(roundBracket(node.id), squareBracket(node.getSuccessor().id))) {

@@ -28,17 +28,9 @@ public class ChordModel {
 
     public void init(int... ids) {
         nodes = new HashMap<>();
-//        ChordNode initialNode = new ChordNode(ids[0], m);
-//        initialNode.join(null);
-//        nodes.put(initialNode.getId(), initialNode);
-//        applyChanges();
-//        log.info("===== node joined with id[{}] ====", initialNode.getId());
         add(ids[0]);
-//        log.info("all nodes: {}", nodes);
         for (int i = 1; i < ids.length; i++) {
             add(ids[i]);
-//            log.info("===== node joined with id[{}] ====", initialNode.getId());
-//            log.info("all nodes: {}", nodes);
         }
     }
 

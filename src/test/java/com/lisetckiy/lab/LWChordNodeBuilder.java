@@ -21,6 +21,15 @@ public class LWChordNodeBuilder {
         return map;
     }
 
+    public Map<Integer,LightweightChordNode> test2ValidationData_tigran(){
+        Map<Integer, LightweightChordNode> map = new HashMap<>();
+        map.put(0, buildChordNode(0, 1,6, new int[][]{{1,1},{2,3},{4,6}}));
+        map.put(1, buildChordNode(1, 3,0, new int[][]{{2,3},{3,3},{5,6}}));
+        map.put(3, buildChordNode(3, 6,1, new int[][]{{4,6},{5,6},{7,0}}));
+        map.put(6, buildChordNode(6, 0,3, new int[][]{{7,0},{0,0},{2,3}}));
+        return map;
+    }
+
 
     public Map<Integer,LightweightChordNode> test2_1ValidationData(){
         Map<Integer, LightweightChordNode> map = new HashMap<>();
